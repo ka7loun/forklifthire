@@ -24,49 +24,49 @@ const Hire: FC = () => {
 
   const forklifts = [
     {
-      image: '/forflift/Counterbalance 2.5-ton.jpg',
+      image: './forflift/Counterbalance 2.5-ton.jpg',
       title: 'Counterbalance 2.5-ton',
       capacity: '2,500 kg',
       suitability: 'Suitable for indoor and outdoor use'
     },
     {
-      image: '/forflift/Electric Counterbalance.jpg',
+      image: './forflift/Electric Counterbalance.jpg',
       title: 'Electric Counterbalance',
       capacity: '2.0 to 3.5 ton',
       suitability: 'Suitable for warehouse operations'
     },
     {
-      image: '/forflift/Reach Truck 1.4 ton.jpg',
+      image: './forflift/Reach Truck 1.4 ton.jpg',
       title: 'Reach Truck 1.4 ton',
       capacity: '1,400 kg',
       suitability: 'Suitable for indoor use'
     },
     {
-      image: '/forflift/Electric Pallet Truck 2 ton.jpg',
+      image: './forflift/Electric Pallet Truck 2 ton.jpg',
       title: 'Electric Pallet Truck',
       capacity: '2,000 kg',
       suitability: 'Suitable for warehouse operations'
     },
     {
-      image: '/forflift/Manual Pallet.jpg',
+      image: './forflift/Manual Pallet.jpg',
       title: 'Manual Pallet',
       capacity: '2,500 kg',
       suitability: 'Suitable for indoor use'
     },
     {
-      image: '/forflift/Stacker.jpg',
+      image: './forflift/Stacker.jpg',
       title: 'Stacker',
       capacity: '1,000 kg',
       suitability: 'Suitable for warehouse operations'
     },
     {
-      image: '/forflift/Electric Stacker.jpg',
+      image: './forflift/Electric Stacker.jpg',
       title: 'Electric Stacker',
       capacity: '1,600 kg',
       suitability: 'Suitable for warehouse operations'
     },
     {
-      image: '/forflift/Electric Stacker.jpg',
+      image: './forflift/Electric Stacker.jpg',
       title: 'Electric Stacker Plus',
       capacity: '1,600 kg',
       suitability: 'Suitable for warehouse operations'

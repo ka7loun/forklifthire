@@ -21,49 +21,49 @@ const ForkliftCard: FC<ForkliftCardProps> = ({ image, title, capacity, price }) 
 const Sales: FC = () => {
   const forkliftsForSale = [
     {
-      image: '/forflift/Counterbalance 2.5-ton.jpg',
+      image: './forflift/Counterbalance 2.5-ton.jpg',
       title: 'Counterbalance 2.5-ton',
       capacity: '2,500 kg',
       price: '$15,000'
     },
     {
-      image: '/forflift/Electric Counterbalance.jpg',
+      image: './forflift/Electric Counterbalance.jpg',
       title: 'Electric Counterbalance',
       capacity: '2.0 to 3.5 ton',
       price: '$18,000'
     },
     {
-      image: '/forflift/Reach Truck 1.4 ton.jpg',
+      image: './forflift/Reach Truck 1.4 ton.jpg',
       title: 'Reach Truck 1.4 ton',
       capacity: '1,400 kg',
       price: '$12,000'
     },
     {
-      image: '/forflift/Electric Pallet Truck 2 ton.jpg',
+      image: './forflift/Electric Pallet Truck 2 ton.jpg',
       title: 'Electric Pallet Truck',
       capacity: '2,000 kg',
       price: '$5,000'
     },
     {
-      image: '/forflift/Manual Pallet.jpg',
+      image: './forflift/Manual Pallet.jpg',
       title: 'Manual Pallet',
       capacity: '2,500 kg',
       price: '$3,000'
     },
     {
-      image: '/forflift/Stacker.jpg',
+      image: './forflift/Stacker.jpg',
       title: 'Stacker',
       capacity: '1,000 kg',
       price: '$7,000'
     },
     {
-      image: '/forflift/Electric Stacker.jpg',
+      image: './forflift/Electric Stacker.jpg',
       title: 'Electric Stacker',
       capacity: '1,600 kg',
       price: '$9,000'
     },
     {
-      image: '/forflift/Electric Stacker.jpg',
+      image: './forflift/Electric Stacker.jpg',
       title: 'Electric Stacker Plus',
       capacity: '1,600 kg',
       price: '$10,000'

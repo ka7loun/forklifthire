@@ -40,7 +40,7 @@ function HomePage() {
         <div className="relative h-[600px]">
           <img
             className="absolute inset-0 w-full h-full object-cover"
-            src="/forklift-wearhouse_bg.png"
+            src="./forklift-wearhouse_bg.png"
             alt="Warehouse with forklifts"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/60"></div>
@@ -115,7 +115,7 @@ function App() {
             <div className="flex items-center justify-between h-20">
               <div className="flex items-center space-x-3">
                 <Link to="/" className="flex items-center">
-                  <img src="/forklift-logo.png" alt="Forklift Logo" className="h-20 w-100" />
+                  <img src="./forklift-logo.png" alt="Forklift Logo" className="h-20 w-100" />
                 </Link>
               </div>
               <div className="hidden md:flex space-x-8">
