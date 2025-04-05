@@ -5,6 +5,7 @@ import Hire from './pages/Hire';
 import Sales from './pages/Sales';
 import Contact from './pages/Contact';
 import ComingSoon from './pages/ComingSoon';
+import Terms from './pages/Terms';
 
 
 
@@ -188,13 +189,13 @@ function App() {
                 </Link>
               </div>
               <div className="hidden md:flex space-x-8">
-                {['Home', 'Contact', 'Sales', 'Hire', 'Equipment', 'Services', 'T&Cs'].map((item) => (
+                {['Home', 'Contact', 'Sales', 'Hire', 'Equipment', 'Services', 'Terms'].map((item) => (
                   <Link
                     key={item}
                     to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(/\s+/g, '-')}`}
                     className="text-lg font-medium px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-105"
                   >
-                    {item}
+                    {item === 'Terms' ? 'T&Cs' : item}
                   </Link>
                 ))}
               </div>
@@ -208,8 +209,8 @@ function App() {
           <Route path="/sales" element={<Sales />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/equipment" element={<ComingSoon pageName="Equipment" />} />
+          <Route path="/terms" element={<Terms />} />
           <Route path="/services" element={<ComingSoon pageName="Services" />} />
-          <Route path="/t&cs" element={<ComingSoon pageName="Terms & Conditions" />} />
         </Routes>
 
         {/* Footer */}
@@ -236,6 +237,11 @@ function App() {
                   <li>
                     <Link to="/services" className="text-gray-400 hover:text-white transition-colors duration-200">
                       Services
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/terms" className="text-gray-400 hover:text-white transition-colors duration-200">
+                      Terms & Conditions
                     </Link>
                   </li>
                   <li>
