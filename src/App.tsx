@@ -6,6 +6,7 @@ import Sales from './pages/Sales';
 import Contact from './pages/Contact';
 import ComingSoon from './pages/ComingSoon';
 import Terms from './pages/Terms';
+import About from './pages/About';
 
 
 
@@ -196,7 +197,7 @@ function App() {
                 </Link>
               </div>
               <div className="hidden md:flex space-x-4 lg:space-x-8">
-                {['Home', 'Contact', 'Sales', 'Hire', 'Equipment', 'Services', 'Terms'].map((item) => (
+                {['Home', 'About', 'Contact', 'Sales', 'Hire', 'Equipment', 'Services', 'Terms'].map((item) => (
                   <Link
                     key={item}
                     to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(/\s+/g, '-')}`}
@@ -220,6 +221,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<About />} />
           <Route path="/hire" element={<Hire />} />
           <Route path="/sales" element={<Sales />} />
           <Route path="/contact" element={<Contact />} />
@@ -246,7 +248,7 @@ function App() {
                   </button>
                 </div>
                 <div className="space-y-4">
-                  {['Home', 'Contact', 'Sales', 'Hire', 'Equipment', 'Services', 'Terms'].map((item) => (
+                  {['Home', 'About', 'Contact', 'Sales', 'Hire', 'Equipment', 'Services', 'Terms'].map((item) => (
                     <Link
                       key={item}
                       to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(/\s+/g, '-')}`}
@@ -290,6 +292,9 @@ function App() {
                 <p className="text-gray-400 leading-relaxed mt-3">
                   We're not just a hire company. We're your partner in solving day-to-day site, warehouse, and event challenges.
                 </p>
+                <Link to="/about" className="inline-block mt-4 text-blue-400 hover:text-blue-300 transition-colors duration-200">
+                  Learn more about us →
+                </Link>
               </div>
               <div>
                 <h3 className="text-xl font-semibold mb-6">Quick Links</h3>
@@ -297,6 +302,11 @@ function App() {
                   <li>
                     <Link to="/" className="text-gray-400 hover:text-white transition-colors duration-200">
                       Home
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/about" className="text-gray-400 hover:text-white transition-colors duration-200">
+                      About Us
                     </Link>
                   </li>
                   <li>
@@ -351,7 +361,7 @@ function App() {
                 <ul className="space-y-4 text-gray-400">
                   <li>Phone (24/7): 01582 967 987</li>
                   <li>Mobile / WhatsApp: +44 (0) 7534 629 583</li>
-                  <li>info@forklifthiresolution.co.uk</li>
+                  <li>info@forklifthiresolutions.org</li>
                   <li>122 Tenby Drive</li>
                   <li>Luton, Bedfordshire</li>
                   <li>LU4 9BN</li>
