@@ -63,9 +63,9 @@ function HomePage() {
                     <ContactInfo icon={<Phone />} text="Mobile / WhatsApp: +44 (0) 7534 629 583" />
                   </div>
                 </div>
-                <button className="bg-[#004AAD] text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 ml-auto">
+                <Link to="/contact" className="bg-[#004AAD] text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 ml-auto inline-block">
                   Request a Quote
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -100,6 +100,75 @@ function HomePage() {
         </div>
       </div>
 
+      {/* Request a Quote Section */}
+      <div className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div className="md:flex">
+              <div className="md:w-2/3 p-8 md:p-12">
+                <h2 className="text-3xl font-bold text-gray-800 mb-4">Need a forklift for your business?</h2>
+                <p className="text-lg text-gray-600 mb-6">
+                  Whether you need a forklift for a day, a week, or long-term, we've got you covered. 
+                  Fill out our quick quote form and we'll get back to you within 24 hours with the best options for your needs.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-center">
+                    <div className="bg-blue-100 p-2 rounded-full mr-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span className="text-gray-700">No obligation quotes</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="bg-blue-100 p-2 rounded-full mr-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span className="text-gray-700">Fast response within 24 hours</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="bg-blue-100 p-2 rounded-full mr-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span className="text-gray-700">Competitive pricing guaranteed</span>
+                  </div>
+                </div>
+                <div className="mt-8">
+                  <Link 
+                    to="/contact" 
+                    className="inline-block bg-[#004AAD] text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
+                  >
+                    Request Your Quote Now
+                  </Link>
+                </div>
+              </div>
+              <div className="md:w-1/3 bg-[#004AAD] p-8 md:p-12 flex flex-col justify-center">
+                <div className="text-white">
+                  <h3 className="text-2xl font-bold mb-4">Contact Us Directly</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-center">
+                      <Phone className="mr-3 text-blue-300" />
+                      <span>01582 967 987</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Phone className="mr-3 text-blue-300" />
+                      <span>+44 (0) 7534 629 583</span>
+                    </div>
+                    <div className="mt-6">
+                      <p className="text-blue-200">Email us at:</p>
+                      <p className="text-white font-semibold">kahlounahmed1@gmail.com</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </>
   );
