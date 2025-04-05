@@ -44,18 +44,20 @@ function HomePage() {
             src="./forklift-wearhouse_bg.png"
             alt="Warehouse with forklifts"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/40"></div>
           
           {/* Hero Content */}
           <div className="absolute inset-0 flex items-end pb-16">
             <div className="max-w-7xl mx-auto px-4 w-full">
-              <div className="flex justify-between items-end">
+              <div className="flex flex-col md:flex-row md:justify-between md:items-end">
                 <div className="flex flex-col items-start max-w-3xl">
-                  <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
-                    Hire a Forklift - 
-                    <span className="text-blue-300">Fast, Flexible & Reliable</span>
+                  <h1 className="text-4xl md:text-7xl font-bold text-white leading-tight">
+                    Forklift
                   </h1>
-                  <p className="text-xl md:text-2xl text-gray-200 mt-8 max-w-2xl leading-relaxed">
+                  <h2 className="text-3xl md:text-5xl font-bold text-blue-300 mt-2 md:mt-4">
+                    Fast, Flexible & Reliable
+                  </h2>
+                  <p className="text-lg md:text-2xl text-gray-200 mt-4 md:mt-8 max-w-2xl leading-relaxed">
                     Short-term and long-term hire available. With or without operator.
                     Delivered to your site within 24 hours.
                   </p>
@@ -64,9 +66,11 @@ function HomePage() {
                     <ContactInfo icon={<Phone />} text="Mobile / WhatsApp: +44 (0) 7534 629 583" />
                   </div>
                 </div>
-                <Link to="/contact" className="bg-[#004AAD] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 ml-auto inline-block">
-                  Quote
-                </Link>
+                <div className="mt-6 md:mt-0">
+                  <Link to="/contact" className="bg-[#004AAD] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 inline-block">
+                    Quote
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -183,10 +187,12 @@ function App() {
         {/* Navigation */}
         <nav className="bg-[#004AAD] text-white fixed w-full z-50">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="flex items-center justify-between h-20">
-              <div className="flex items-center space-x-3">
+            <div className="flex items-center justify-between h-16 md:h-20">
+              <div className="flex-shrink-0">
                 <Link to="/" className="flex items-center">
-                  <img src="./forklift-logo.png" alt="Forklift Logo" className="h-16 md:h-20 w-auto" style={{filter: 'brightness(1.2)', border: 'none'}} />
+                  <div className="bg-transparent">
+                    <img src="./forklift-logo.png" alt="Forklift Logo" className="h-12 md:h-20 w-auto" style={{filter: 'brightness(1.4)', border: 'none', boxShadow: 'none'}} />
+                  </div>
                 </Link>
               </div>
               <div className="hidden md:flex space-x-4 lg:space-x-8">
