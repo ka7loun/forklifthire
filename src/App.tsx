@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Phone, ChevronDown } from 'lucide-react';
+import { Phone, ChevronDown, Menu, X } from 'lucide-react';
 import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Hire from './pages/Hire';
 import Sales from './pages/Sales';
@@ -44,7 +44,7 @@ function HomePage() {
             src="./forklift-wearhouse_bg.png"
             alt="Warehouse with forklifts"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
           
           {/* Hero Content */}
           <div className="absolute inset-0 flex items-end pb-16">
@@ -64,8 +64,8 @@ function HomePage() {
                     <ContactInfo icon={<Phone />} text="Mobile / WhatsApp: +44 (0) 7534 629 583" />
                   </div>
                 </div>
-                <Link to="/contact" className="bg-[#004AAD] text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 ml-auto inline-block">
-                  Request a Quote
+                <Link to="/contact" className="bg-[#004AAD] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 ml-auto inline-block">
+                  Quote
                 </Link>
               </div>
             </div>
@@ -73,7 +73,7 @@ function HomePage() {
         </div>
 
         {/* Search Box */}
-        <div ref={dropdownRef} className="absolute left-1/2 -translate-x-1/2 top-32 w-full max-w-2xl px-4 z-20">
+        <div ref={dropdownRef} className="absolute left-1/2 -translate-x-1/2 top-32 w-full max-w-2xl px-4 z-20 md:block hidden">
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="w-full bg-white px-6 py-4 flex items-center justify-between rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
@@ -143,7 +143,7 @@ function HomePage() {
                     to="/contact" 
                     className="inline-block bg-[#004AAD] text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
                   >
-                    Request Your Quote Now
+                    Get a Quote
                   </Link>
                 </div>
               </div>
@@ -161,7 +161,7 @@ function HomePage() {
                     </div>
                     <div className="mt-6">
                       <p className="text-blue-200">Email us at:</p>
-                      <p className="text-white font-semibold">kahlounahmed1@gmail.com</p>
+                      <p className="text-white font-semibold">info@forklifthiresolutions.org</p>
                     </div>
                   </div>
                 </div>
@@ -176,6 +176,7 @@ function HomePage() {
 }
 
 function App() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <Router>
       <div className="min-h-screen bg-white">
@@ -185,10 +186,10 @@ function App() {
             <div className="flex items-center justify-between h-20">
               <div className="flex items-center space-x-3">
                 <Link to="/" className="flex items-center">
-                  <img src="./forklift-logo.png" alt="Forklift Logo" className="h-20 w-100" />
+                  <img src="./forklift-logo.png" alt="Forklift Logo" className="h-16 md:h-20 w-auto" style={{filter: 'brightness(1.2)', border: 'none'}} />
                 </Link>
               </div>
-              <div className="hidden md:flex space-x-8">
+              <div className="hidden md:flex space-x-4 lg:space-x-8">
                 {['Home', 'Contact', 'Sales', 'Hire', 'Equipment', 'Services', 'Terms'].map((item) => (
                   <Link
                     key={item}
@@ -198,6 +199,14 @@ function App() {
                     {item === 'Terms' ? 'T&Cs' : item}
                   </Link>
                 ))}
+              </div>
+              <div className="md:hidden">
+                <button 
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
+                  className="text-white p-2"
+                >
+                  {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                </button>
               </div>
             </div>
           </div>
@@ -212,6 +221,56 @@ function App() {
           <Route path="/terms" element={<Terms />} />
           <Route path="/services" element={<ComingSoon pageName="Services" />} />
         </Routes>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="fixed inset-0 z-40 md:hidden">
+            <div className="fixed inset-0 bg-black opacity-50" onClick={() => setMobileMenuOpen(false)}></div>
+            <div className="fixed inset-y-0 right-0 max-w-xs w-full bg-[#004AAD] shadow-xl z-50 overflow-y-auto">
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-6">
+                  <Link to="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
+                    <img src="./forklift-logo.png" alt="Forklift Logo" className="h-16 w-auto" style={{filter: 'brightness(1.2)'}} />
+                  </Link>
+                  <button 
+                    onClick={() => setMobileMenuOpen(false)} 
+                    className="text-white p-2"
+                  >
+                    <X size={24} />
+                  </button>
+                </div>
+                <div className="space-y-4">
+                  {['Home', 'Contact', 'Sales', 'Hire', 'Equipment', 'Services', 'Terms'].map((item) => (
+                    <Link
+                      key={item}
+                      to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(/\s+/g, '-')}`}
+                      className="block text-lg font-medium py-3 text-white hover:bg-blue-600 hover:text-white transition-colors duration-200 px-4 rounded-lg"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item === 'Terms' ? 'T&Cs' : item}
+                    </Link>
+                  ))}
+                </div>
+                <div className="mt-8 space-y-4">
+                  <Link 
+                    to="/contact" 
+                    className="block w-full bg-white text-[#004AAD] px-6 py-3 rounded-lg text-center text-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Contact
+                  </Link>
+                  <Link 
+                    to="/contact" 
+                    className="block w-full bg-blue-700 text-white px-6 py-3 rounded-lg text-center text-lg font-semibold hover:bg-blue-800 transition-colors duration-200"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Quote
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Footer */}
         <footer className="bg-gray-900 text-white py-16">

@@ -28,7 +28,7 @@ const Contact: FC = () => {
   const [submitStatus, setSubmitStatus] = useState<{ success: boolean; message: string } | null>(null);
 
   // EmailJS configuration
-  const RECIPIENT_EMAIL = 'kahlounahmed1@gmail.com';
+  const RECIPIENT_EMAIL = 'info@forklifthiresolutions.org';
   const SERVICE_ID = 'service_xdkm0kf'; // User's actual service ID
   const TEMPLATE_ID = 'template_8l4kkd4'; // User's actual template ID
   const PUBLIC_KEY = '3YvxzKDTMOgF6B4i9'; // User's actual public key
@@ -128,9 +128,14 @@ ${formData.message}`,
             icon={<Mail className="w-8 h-8" />}
             title="Email Us"
             text={<>
-              <p>General: info@forklifthiresolution.co.uk</p>
-              <p>Events: events@forklifthiresolution.co.uk</p>
-              <p>Recruitment: team@forklifthiresolution.co.uk</p>
+              <p>General: info@forklifthiresolutions.org</p>
+              <p>Enquiries: enquiries@forklifthiresolutions.org</p>
+              <p>Sales: sales@forklifthiresolutions.org</p>
+              <p>Hire: hire@forklifthiresolutions.org</p>
+              <p>Admin: admin@forklifthiresolutions.org</p>
+              <p>Accounts: accounts@forklifthiresolutions.org</p>
+              <p>Services: services@forklifthiresolutions.org</p>
+              <p>Director: karim@forklifthiresolutions.org</p>
             </>}
           />
           <ContactInfo
