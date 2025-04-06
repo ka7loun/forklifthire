@@ -3,17 +3,15 @@ import { FC } from 'react';
 interface ForkliftCardProps {
   image: string;
   title: string;
-  capacity: string;
-  price: string;
 }
 
-const ForkliftCard: FC<ForkliftCardProps> = ({ image, title, capacity, price }) => (
+const ForkliftCard: FC<ForkliftCardProps> = ({ image, title }) => (
   <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-    <img src={image} alt={title} className="w-full h-48 object-cover" />
+    <div className="p-4 flex justify-center items-center h-64">
+      <img src={image} alt={title} className="max-h-full max-w-full object-contain" />
+    </div>
     <div className="p-6">
-      <h3 className="text-xl font-bold text-gray-900">{title}</h3>
-      <p className="text-lg font-semibold text-blue-600 mt-2">{capacity}</p>
-      <p className="text-gray-600 mt-2">{price}</p>
+      <h3 className="text-xl font-bold text-gray-900 text-center">{title}</h3>
     </div>
   </div>
 );
@@ -22,51 +20,35 @@ const Sales: FC = () => {
   const forkliftsForSale = [
     {
       image: './forflift/Counterbalance 2.5-ton.jpg',
-      title: 'Counterbalance 2.5-ton',
-      capacity: '2,500 kg',
-      price: '$15,000'
+      title: 'Counterbalance Forklift'
     },
     {
       image: './forflift/Electric Counterbalance.jpg',
-      title: 'Electric Counterbalance',
-      capacity: '2.0 to 3.5 ton',
-      price: '$18,000'
+      title: 'Electric Counterbalance'
     },
     {
       image: './forflift/Reach Truck 1.4 ton.jpg',
-      title: 'Reach Truck 1.4 ton',
-      capacity: '1,400 kg',
-      price: '$12,000'
+      title: 'Reach Truck'
     },
     {
       image: './forflift/Electric Pallet Truck 2 ton.jpg',
-      title: 'Electric Pallet Truck',
-      capacity: '2,000 kg',
-      price: '$5,000'
+      title: 'Electric Pallet Truck'
     },
     {
       image: './forflift/Manual Pallet.jpg',
-      title: 'Manual Pallet',
-      capacity: '2,500 kg',
-      price: '$3,000'
+      title: 'Manual Pallet'
     },
     {
       image: './forflift/Stacker.jpg',
-      title: 'Stacker',
-      capacity: '1,000 kg',
-      price: '$7,000'
+      title: 'Stacker'
     },
     {
       image: './forflift/Electric Stacker.jpg',
-      title: 'Electric Stacker',
-      capacity: '1,600 kg',
-      price: '$9,000'
+      title: 'Electric Stacker'
     },
     {
       image: './forflift/Electric Stacker.jpg',
-      title: 'Electric Stacker Plus',
-      capacity: '1,600 kg',
-      price: '$10,000'
+      title: 'Electric Stacker Plus'
     }
   ];
 

@@ -3,17 +3,17 @@ import { FC, useState } from 'react';
 interface ForkliftCardProps {
   image: string;
   title: string;
-  capacity: string;
   suitability: string;
 }
 
-const ForkliftCard: FC<ForkliftCardProps> = ({ image, title, capacity, suitability }) => (
+const ForkliftCard: FC<ForkliftCardProps> = ({ image, title, suitability }) => (
   <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-    <img src={image} alt={title} className="w-full h-48 object-cover" />
+    <div className="p-4 flex justify-center items-center h-64">
+      <img src={image} alt={title} className="max-h-full max-w-full object-contain" />
+    </div>
     <div className="p-6">
-      <h3 className="text-xl font-bold text-gray-900">{title}</h3>
-      <p className="text-lg font-semibold text-blue-600 mt-2">{capacity}</p>
-      <p className="text-gray-600 mt-2">{suitability}</p>
+      <h3 className="text-xl font-bold text-gray-900 text-center">{title}</h3>
+      <p className="text-gray-600 mt-2 text-center">{suitability}</p>
     </div>
   </div>
 );
@@ -25,50 +25,42 @@ const Hire: FC = () => {
   const forklifts = [
     {
       image: './forflift/Counterbalance 2.5-ton.jpg',
-      title: 'Counterbalance 2.5-ton',
-      capacity: '2,500 kg',
+      title: 'Counterbalance Forklift',
       suitability: 'Suitable for indoor and outdoor use'
     },
     {
       image: './forflift/Electric Counterbalance.jpg',
       title: 'Electric Counterbalance',
-      capacity: '2.0 to 3.5 ton',
       suitability: 'Suitable for warehouse operations'
     },
     {
       image: './forflift/Reach Truck 1.4 ton.jpg',
-      title: 'Reach Truck 1.4 ton',
-      capacity: '1,400 kg',
+      title: 'Reach Truck',
       suitability: 'Suitable for indoor use'
     },
     {
       image: './forflift/Electric Pallet Truck 2 ton.jpg',
       title: 'Electric Pallet Truck',
-      capacity: '2,000 kg',
       suitability: 'Suitable for warehouse operations'
     },
     {
       image: './forflift/Manual Pallet.jpg',
       title: 'Manual Pallet',
-      capacity: '2,500 kg',
       suitability: 'Suitable for indoor use'
     },
     {
       image: './forflift/Stacker.jpg',
       title: 'Stacker',
-      capacity: '1,000 kg',
       suitability: 'Suitable for warehouse operations'
     },
     {
       image: './forflift/Electric Stacker.jpg',
       title: 'Electric Stacker',
-      capacity: '1,600 kg',
       suitability: 'Suitable for warehouse operations'
     },
     {
       image: './forflift/Electric Stacker.jpg',
       title: 'Electric Stacker Plus',
-      capacity: '1,600 kg',
       suitability: 'Suitable for warehouse operations'
     }
   ];
