@@ -7,6 +7,7 @@ import Contact from './pages/Contact';
 import ComingSoon from './pages/ComingSoon';
 import Terms from './pages/Terms';
 import About from './pages/About';
+import ScrollToTop from './components/ScrollToTop';
 
 
 
@@ -184,6 +185,7 @@ function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen bg-white">
         {/* Navigation */}
         <nav className="bg-[#004AAD] text-white fixed w-full z-50">
