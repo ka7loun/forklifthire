@@ -1,6 +1,7 @@
 import { FC, useState, useEffect } from 'react';
 import { Phone, Mail, Building2 } from 'lucide-react';
 import emailjs from 'emailjs-com';
+import { useLocation } from 'react-router-dom';
 
 interface ContactInfoProps {
   icon: React.ReactNode;
@@ -17,12 +18,15 @@ const ContactInfo: FC<ContactInfoProps> = ({ icon, title, text }) => (
 );
 
 const Contact: FC = () => {
+  const location = useLocation();
+  const prefilledMessage = location.state?.prefilledMessage || '';
+
   const [formData, setFormData] = useState({
     fullName: '',
     company: '',
     phone: '',
     email: '',
-    message: ''
+    message: prefilledMessage
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{ success: boolean; message: string } | null>(null);
@@ -233,7 +237,7 @@ ${formData.message}`,
               <h2 className="text-2xl font-bold mb-6">Our Location</h2>
               <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2469.8088025855594!2d-0.4185844842089699!3d51.8789894796959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48764144641475f5%3A0x8e0b1e0c4a4f7b0e!2sLuton%2C%20UK!5e0!3m2!1sen!2s!4v1629789012345!5m2!1sen!2s"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2469.808802585559!2d-0.4207731839685441!3d51.87898947969591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48764144641475f5%3A0x8e0b1e0c4a4f7b0e!2s122%20Tenby%20Dr%2C%20Luton%20LU4%209BN%2C%20UK!5e0!3m2!1sen!2s!4v1629789012345!5m2!1sen!2s"
                   width="100%"
                   height="400"
                   style={{ border: 0 }}

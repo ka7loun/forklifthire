@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Award, Shield, Truck, Users, Wrench, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import ServiceModal from '../components/ServiceModal';
+import { servicesData } from '../data/servicesData';
 
 interface SectionTitleProps {
   children: React.ReactNode;
@@ -14,10 +16,14 @@ interface ServiceCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
+  onClick: () => void;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) => (
-  <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, onClick }) => (
+  <div 
+    className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full cursor-pointer" 
+    onClick={onClick}
+  >
     <div className="text-blue-600 mb-4">{icon}</div>
     <h3 className="text-xl font-semibold mb-3">{title}</h3>
     <p className="text-gray-700 flex-grow">{description}</p>
@@ -35,6 +41,7 @@ const CertificationBadge: React.FC<CertificationBadgeProps> = ({ name }) => (
 );
 
 const About: React.FC = () => {
+  const [selectedService, setSelectedService] = useState<number | null>(null);
   return (
     <div className="min-h-screen bg-gray-50 pt-20">
       {/* Hero Section */}
@@ -71,42 +78,27 @@ const About: React.FC = () => {
           <p className="text-lg text-gray-700 mb-8">We specialise in:</p>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <ServiceCard 
-              icon={<Truck size={32} />} 
-              title="Forklift Hire" 
-              description="With or without certified operators, flexible terms to suit your needs."
-            />
-            <ServiceCard 
-              icon={<Users size={32} />} 
-              title="Operator & Manpower Supply" 
-              description="Fully certified and experienced forklift operators available nationwide."
-            />
-            <ServiceCard 
-              icon={<Truck size={32} />} 
-              title="Forklift Sales" 
-              description="New & used forklifts for sale, with competitive pricing and warranty options."
-            />
-            <ServiceCard 
-              icon={<Wrench size={32} />} 
-              title="Pallet Trucks & Equipment" 
-              description="Wide range of pallet trucks and equipment accessories for all your needs."
-            />
-            <ServiceCard 
-              icon={<Truck size={32} />} 
-              title="Warehouse Moves & Transport" 
-              description="Complete logistics solutions for warehouse relocations and transport needs."
-            />
-            <ServiceCard 
-              icon={<Calendar size={32} />} 
-              title="Exhibition & Event Support" 
-              description="Specialized forklift support for exhibitions, events, and arena setups."
-            />
-            <ServiceCard 
-              icon={<Wrench size={32} />} 
-              title="On-site Repairs & Servicing" 
-              description="Maintenance, repairs, and emergency cover to keep your operations running."
-            />
+            {servicesData.map((service, index) => (
+              <ServiceCard 
+                key={index}
+                icon={index === 0 ? <Users size={32} /> :
+                      index === 1 || index === 2 ? <Truck size={32} /> :
+                      index === 3 || index === 6 ? <Wrench size={32} /> :
+                      index === 4 ? <Truck size={32} /> :
+                      <Calendar size={32} />}
+                title={service.title.split(' – ')[0]}
+                description={service.description.split('.')[0]}
+                onClick={() => setSelectedService(index)}
+              />
+            ))}
           </div>
+
+          {selectedService !== null && (
+            <ServiceModal
+              service={servicesData[selectedService]}
+              onClose={() => setSelectedService(null)}
+            />
+          )}
           
           <p className="text-lg text-gray-700 mt-8">
             Whether you need short-term forklift support or long-term logistics assistance, we offer 

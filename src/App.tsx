@@ -54,11 +54,14 @@ function HomePage() {
               <div className="flex flex-col md:flex-row md:justify-between md:items-end">
                 <div className="flex flex-col items-start max-w-3xl">
                   <h1 className="text-4xl md:text-7xl font-bold text-white leading-tight">
-                    Forklift
+                    Forklift Hire Solutions
                   </h1>
                   <h2 className="text-3xl md:text-5xl font-bold text-blue-300 mt-2 md:mt-4">
-                    Fast, Flexible & Reliable
+                    Your Trusted Lifting Partner
                   </h2>
+                  <h3 className="text-2xl md:text-3xl font-bold text-blue-200 mt-2">
+                    Fast, Flexible & Reliable
+                  </h3>
                   <p className="text-lg md:text-2xl text-gray-200 mt-4 md:mt-8 max-w-2xl leading-relaxed">
                     Short-term and long-term hire available. With or without operator.
                     Delivered to your site within 24 hours.
@@ -188,14 +191,12 @@ function App() {
       <ScrollToTop />
       <div className="min-h-screen bg-white">
         {/* Navigation */}
-        <nav className="bg-[#004AAD] text-white fixed w-full z-50">
+        <nav className="bg-white text-gray-800 fixed w-full z-50 shadow-md">
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex items-center justify-between h-16 md:h-20">
               <div className="flex-shrink-0">
                 <Link to="/" className="flex items-center">
-                  <div className="bg-transparent">
-                    <img src="./forklift-logo.png" alt="Forklift Logo" className="h-12 md:h-20 w-auto" style={{filter: 'brightness(1.4)', border: 'none', boxShadow: 'none'}} />
-                  </div>
+                  <img src="./forklift-logo.png" alt="Forklift Logo" className="h-40 md:h-50 w-50" />
                 </Link>
               </div>
               <div className="hidden md:flex space-x-4 lg:space-x-8">
@@ -203,7 +204,7 @@ function App() {
                   <Link
                     key={item}
                     to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="text-lg font-medium px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-105"
+                    className="nav-link text-lg font-medium px-4 py-2 rounded-lg hover:bg-gray-100 hover:text-[#004AAD] transition-all duration-300 transform hover:scale-105"
                   >
                     {item === 'Terms' ? 'T&Cs' : item}
                   </Link>
@@ -212,7 +213,7 @@ function App() {
               <div className="md:hidden">
                 <button 
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
-                  className="text-white p-2"
+                  className="nav-button text-gray-800 p-2"
                 >
                   {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
@@ -240,7 +241,7 @@ function App() {
               <div className="p-6">
                 <div className="flex items-center justify-between mb-6">
                   <Link to="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
-                    <img src="./forklift-logo.png" alt="Forklift Logo" className="h-16 w-auto" style={{filter: 'brightness(1.2)'}} />
+                    <img src="./forklift-logo.png" alt="Forklift Logo" className="h-12 w-auto" style={{filter: 'brightness(1.2)'}} />
                   </Link>
                   <button 
                     onClick={() => setMobileMenuOpen(false)} 
@@ -254,7 +255,7 @@ function App() {
                     <Link
                       key={item}
                       to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="block text-lg font-medium py-3 text-white hover:bg-blue-600 hover:text-white transition-colors duration-200 px-4 rounded-lg"
+                      className="nav-link block text-lg font-medium py-3 text-white hover:bg-blue-600 hover:text-white transition-colors duration-200 px-4 rounded-lg"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {item === 'Terms' ? 'T&Cs' : item}
@@ -264,14 +265,14 @@ function App() {
                 <div className="mt-8 space-y-4">
                   <Link 
                     to="/contact" 
-                    className="block w-full bg-white text-[#004AAD] px-6 py-3 rounded-lg text-center text-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
+                    className="nav-link block w-full bg-white text-[#004AAD] px-6 py-3 rounded-lg text-center text-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Contact
                   </Link>
                   <Link 
                     to="/contact" 
-                    className="block w-full bg-blue-700 text-white px-6 py-3 rounded-lg text-center text-lg font-semibold hover:bg-blue-800 transition-colors duration-200"
+                    className="nav-link block w-full bg-blue-700 text-white px-6 py-3 rounded-lg text-center text-lg font-semibold hover:bg-blue-800 transition-colors duration-200"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Quote
@@ -302,32 +303,32 @@ function App() {
                 <h3 className="text-xl font-semibold mb-6">Quick Links</h3>
                 <ul className="space-y-4 text-gray-400">
                   <li>
-                    <Link to="/" className="text-gray-400 hover:text-white transition-colors duration-200">
+                    <Link to="/" className="nav-link text-gray-400 hover:text-white transition-colors duration-200">
                       Home
                     </Link>
                   </li>
                   <li>
-                    <Link to="/about" className="text-gray-400 hover:text-white transition-colors duration-200">
+                    <Link to="/about" className="nav-link text-gray-400 hover:text-white transition-colors duration-200">
                       About Us
                     </Link>
                   </li>
                   <li>
-                    <Link to="/services" className="text-gray-400 hover:text-white transition-colors duration-200">
+                    <Link to="/services" className="nav-link text-gray-400 hover:text-white transition-colors duration-200">
                       Services
                     </Link>
                   </li>
                   <li>
-                    <Link to="/terms" className="text-gray-400 hover:text-white transition-colors duration-200">
+                    <Link to="/terms" className="nav-link text-gray-400 hover:text-white transition-colors duration-200">
                       Terms & Conditions
                     </Link>
                   </li>
                   <li>
-                    <Link to="/equipment" className="text-gray-400 hover:text-white transition-colors duration-200">
+                    <Link to="/equipment" className="nav-link text-gray-400 hover:text-white transition-colors duration-200">
                       Equipment
                     </Link>
                   </li>
                   <li>
-                    <Link to="/contact" className="text-gray-400 hover:text-white transition-colors duration-200">
+                    <Link to="/contact" className="nav-link text-gray-400 hover:text-white transition-colors duration-200">
                       Contact
                     </Link>
                   </li>
@@ -342,17 +343,17 @@ function App() {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/services" className="text-gray-400 hover:text-white transition-colors duration-200">
+                    <Link to="/services" className="nav-link text-gray-400 hover:text-white transition-colors duration-200">
                       Operator Hire
                     </Link>
                   </li>
                   <li>
-                    <Link to="/services" className="text-gray-400 hover:text-white transition-colors duration-200">
+                    <Link to="/services" className="nav-link text-gray-400 hover:text-white transition-colors duration-200">
                       Maintenance
                     </Link>
                   </li>
                   <li>
-                    <Link to="/services" className="text-gray-400 hover:text-white transition-colors duration-200">
+                    <Link to="/services" className="nav-link text-gray-400 hover:text-white transition-colors duration-200">
                       Transport
                     </Link>
                   </li>

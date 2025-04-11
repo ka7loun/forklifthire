@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .tap-highlight-transparent {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -14,7 +20,25 @@
 
 /* Custom focus styles */
 *:focus {
-  @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+  @apply outline-none tap-highlight-transparent;
+}
+
+/* Interactive elements focus styles - only show for keyboard navigation */
+a:focus-visible:not(.nav-link),
+button:focus-visible:not(.nav-button),
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  @apply ring-2 ring-blue-500 ring-offset-2;
+}
+
+/* Remove focus styles for navigation elements */
+.nav-link:focus,
+.nav-button:focus,
+.flex-shrink-0.select-none *:focus,
+.flex-shrink-0.select-none:focus,
+.flex-shrink-0.select-none a:focus {
+  @apply ring-0 ring-offset-0;
 }
 
 /* Button hover effects */
