@@ -8,10 +8,11 @@ import ComingSoon from './pages/ComingSoon';
 import Terms from './pages/Terms';
 import About from './pages/About';
 import ScrollToTop from './components/ScrollToTop';
+import Fleet from './pages/Fleet';
 
 
 
-function ContactInfo({ icon, text }: { icon: React.ReactNode; text: string }) {
+function ContactInfo({ icon, text }: { icon: React.ReactNode; text: React.ReactNode }) {
   return (
     <div className="flex items-center space-x-4 bg-black/30 backdrop-blur-sm px-4 py-2 rounded-lg hover:bg-black/40 transition-all duration-300">
       <div className="text-blue-300">{icon}</div>
@@ -43,7 +44,7 @@ function HomePage() {
         <div className="relative h-[600px]">
           <img
             className="absolute inset-0 w-full h-full object-cover"
-            src="./forklift-wearhouse_bg.png"
+            src="/forklifthire/forklift-wearhouse_bg.png"
             alt="Warehouse with forklifts"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/40"></div>
@@ -67,8 +68,8 @@ function HomePage() {
                     Delivered to your site within 24 hours.
                   </p>
                   <div className="mt-4 space-y-2">
-                    <ContactInfo icon={<Phone />} text="Phone (24/7): 01582 967 987" />
-                    <ContactInfo icon={<Phone />} text="Mobile / WhatsApp: +44 (0) 7534 629 583" />
+                    <ContactInfo icon={<Phone />} text={<a href="tel:01582967987" className="hover:text-blue-600 transition-colors">Phone (24/7): 01582 967 987</a>} />
+                    <ContactInfo icon={<Phone />} text={<a href="tel:+447534629583" className="hover:text-blue-600 transition-colors">Mobile / WhatsApp: +44 (0) 7534 629 583</a>} />
                   </div>
                 </div>
                 <div className="mt-6 md:mt-0">
@@ -162,15 +163,15 @@ function HomePage() {
                   <div className="space-y-4">
                     <div className="flex items-center">
                       <Phone className="mr-3 text-blue-300" />
-                      <span>01582 967 987</span>
+                      <a href="tel:01582967987" className="hover:text-blue-600 transition-colors">01582 967 987</a>
                     </div>
                     <div className="flex items-center">
                       <Phone className="mr-3 text-blue-300" />
-                      <span>+44 (0) 7534 629 583</span>
+                      <a href="tel:+447534629583" className="hover:text-blue-600 transition-colors">+44 (0) 7534 629 583</a>
                     </div>
                     <div className="mt-6">
                       <p className="text-blue-200">Email us at:</p>
-                      <p className="text-white font-semibold">info@forklifthiresolutions.org</p>
+                      <p className="text-white font-semibold"><a href="mailto:info@forklifthiresolutions.org" className="hover:text-blue-300 transition-colors">info@forklifthiresolutions.org</a></p>
                     </div>
                   </div>
                 </div>
@@ -196,11 +197,11 @@ function App() {
             <div className="flex items-center justify-between h-16 md:h-20">
               <div className="flex-shrink-0">
                 <Link to="/" className="flex items-center">
-                  <img src="./forklift-logo.png" alt="Forklift Logo" className="h-40 md:h-50 w-50" />
+                  <img src="/forklifthire/forklift-logo.png" alt="Forklift Logo" className="h-40 md:h-50 w-50" />
                 </Link>
               </div>
               <div className="hidden md:flex space-x-4 lg:space-x-8">
-                {['Home', 'About', 'Contact', 'Sales', 'Hire', 'Equipment', 'Services', 'Terms'].map((item) => (
+                {['Home', 'About', 'Contact', 'Sales', 'Hire', 'Fleet', 'Services', 'Terms'].map((item) => (
                   <Link
                     key={item}
                     to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(/\s+/g, '-')}`}
@@ -213,8 +214,9 @@ function App() {
               <div className="md:hidden">
                 <button 
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
-                  className="nav-button text-gray-800 p-2"
+                  className="nav-button text-gray-800 p-2 flex items-center gap-2"
                 >
+                  <span className="text-sm font-medium">Menu</span>
                   {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
               </div>
@@ -228,7 +230,7 @@ function App() {
           <Route path="/hire" element={<Hire />} />
           <Route path="/sales" element={<Sales />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/equipment" element={<ComingSoon pageName="Equipment" />} />
+          <Route path="/fleet" element={<Fleet />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/services" element={<ComingSoon pageName="Services" />} />
         </Routes>
@@ -241,7 +243,7 @@ function App() {
               <div className="p-6">
                 <div className="flex items-center justify-between mb-6">
                   <Link to="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
-                    <img src="./forklift-logo.png" alt="Forklift Logo" className="h-12 w-auto" style={{filter: 'brightness(1.2)'}} />
+                    <img src="/forklifthire/forklift-logo.png" alt="Forklift Logo" className="h-12 w-auto" style={{filter: 'brightness(1.2)'}} />
                   </Link>
                   <button 
                     onClick={() => setMobileMenuOpen(false)} 
@@ -251,7 +253,7 @@ function App() {
                   </button>
                 </div>
                 <div className="space-y-4">
-                  {['Home', 'About', 'Contact', 'Sales', 'Hire', 'Equipment', 'Services', 'Terms'].map((item) => (
+                  {['Home', 'About', 'Contact', 'Sales', 'Hire', 'Fleet', 'Services', 'Terms'].map((item) => (
                     <Link
                       key={item}
                       to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(/\s+/g, '-')}`}
@@ -323,8 +325,8 @@ function App() {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/equipment" className="nav-link text-gray-400 hover:text-white transition-colors duration-200">
-                      Equipment
+                    <Link to="/fleet" className="nav-link text-gray-400 hover:text-white transition-colors duration-200">
+                      Fleet
                     </Link>
                   </li>
                   <li>
@@ -362,9 +364,9 @@ function App() {
               <div>
                 <h3 className="text-xl font-semibold mb-6">Contact</h3>
                 <ul className="space-y-4 text-gray-400">
-                  <li>Phone (24/7): 01582 967 987</li>
-                  <li>Mobile / WhatsApp: +44 (0) 7534 629 583</li>
-                  <li>info@forklifthiresolutions.org</li>
+                  <li><a href="tel:01582967987" className="hover:text-white transition-colors">Phone (24/7): 01582 967 987</a></li>
+                  <li><a href="tel:+447534629583" className="hover:text-white transition-colors">Mobile / WhatsApp: +44 (0) 7534 629 583</a></li>
+                  <li><a href="mailto:info@forklifthiresolutions.org" className="hover:text-white transition-colors">info@forklifthiresolutions.org</a></li>
                   <li>122 Tenby Drive</li>
                   <li>Luton, Bedfordshire</li>
                   <li>LU4 9BN</li>

@@ -261,17 +261,15 @@ const About: React.FC = () => {
             <div className="flex items-start">
               <Mail className="text-blue-600 mr-3 flex-shrink-0 mt-1" size={20} />
               <div>
-                <p><span className="font-semibold">General Enquiries:</span> info@forklifthiresolutions.org</p>
-                <p><span className="font-semibold">Sales Department:</span> sales@forklifthiresolutions.org</p>
-                <p><span className="font-semibold">Hire & Operations:</span> hire@forklifthiresolutions.org</p>
+                <p><span className="font-semibold">General Enquiries:</span> <a href="mailto:info@forklifthiresolutions.org" className="hover:text-blue-600 transition-colors">info@forklifthiresolutions.org</a></p>
               </div>
             </div>
             
             <div className="flex items-start">
               <Phone className="text-blue-600 mr-3 flex-shrink-0 mt-1" size={20} />
               <div>
-                <p><span className="font-semibold">Phone (24/7):</span> 01582 967 987</p>
-                <p><span className="font-semibold">Mobile / WhatsApp:</span> +44 (0) 7534 629 583</p>
+                <p><span className="font-semibold">Phone (24/7):</span> <a href="tel:01582967987" className="hover:text-blue-600 transition-colors">01582 967 987</a></p>
+                <p><span className="font-semibold">Mobile / WhatsApp:</span> <a href="tel:+447534629583" className="hover:text-blue-600 transition-colors">+44 (0) 7534 629 583</a></p>
               </div>
             </div>
             

@@ -30,8 +30,8 @@ export const servicesData: ServiceInfo[] = [
       'Confirmed bookings in writing'
     ],
     contacts: [
-      { title: 'Hire Team', email: 'hire@forklifthiresolutions.co.uk' },
-      { title: 'General Info', email: 'info@forklifthiresolutions.co.uk' }
+      { title: 'Hire Team', email: 'info@forklifthiresolutions.org' },
+      { title: 'General Info', email: 'info@forklifthiresolutions.org' }
     ]
   },
   {
@@ -58,8 +58,8 @@ export const servicesData: ServiceInfo[] = [
       'Nationwide delivery & collection'
     ],
     contacts: [
-      { title: 'Hire Desk', email: 'hire@forklifthiresolutions.co.uk' },
-      { title: 'General Enquiries', email: 'info@forklifthiresolutions.co.uk' }
+      { title: 'Hire Desk', email: 'info@forklifthiresolutions.org' },
+      { title: 'General Enquiries', email: 'info@forklifthiresolutions.org' }
     ]
   },
   {
@@ -78,7 +78,7 @@ export const servicesData: ServiceInfo[] = [
       'Fork Attachments & Accessories'
     ],
     contacts: [
-      { title: 'Sales Team', email: 'sales@forklifthiresolutions.co.uk' }
+      { title: 'Sales Team', email: 'info@forklifthiresolutions.org' }
     ]
   },
   {
@@ -99,8 +99,8 @@ export const servicesData: ServiceInfo[] = [
       'Free advice & consultations'
     ],
     contacts: [
-      { title: 'Sales & Hire', email: 'hire@forklifthiresolutions.co.uk' },
-      { title: 'Sales & Hire', email: 'sales@forklifthiresolutions.co.uk' }
+      { title: 'Sales & Hire', email: 'info@forklifthiresolutions.org' },
+      { title: 'Sales & Hire', email: 'info@forklifthiresolutions.org' }
     ]
   },
   {
@@ -125,7 +125,7 @@ export const servicesData: ServiceInfo[] = [
       'Combine with hire or operator supply'
     ],
     contacts: [
-      { title: 'Transport Desk', email: 'info@forklifthiresolutions.co.uk' }
+      { title: 'Transport Desk', email: 'info@forklifthiresolutions.org' }
     ]
   },
   {
@@ -145,8 +145,8 @@ export const servicesData: ServiceInfo[] = [
       'LOLER-compliant machines'
     ],
     contacts: [
-      { title: 'Events Desk', email: 'hire@forklifthiresolutions.co.uk' },
-      { title: 'Events Desk', email: 'info@forklifthiresolutions.co.uk' }
+      { title: 'Events Desk', email: 'info@forklifthiresolutions.org' },
+      { title: 'Events Desk', email: 'info@forklifthiresolutions.org' }
     ]
   },
   {
@@ -172,7 +172,7 @@ export const servicesData: ServiceInfo[] = [
       'Service scheduling without sales pressure'
     ],
     contacts: [
-      { title: 'Service Desk', email: 'info@forklifthiresolutions.co.uk' }
+      { title: 'Service Desk', email: 'info@forklifthiresolutions.org' }
     ]
   }
 ];

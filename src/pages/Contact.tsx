@@ -124,22 +124,15 @@ ${formData.message}`,
             icon={<Phone className="w-8 h-8" />}
             title="Phone Support"
             text={<>
-              <p>Phone (24/7): 01582 967 987</p>
-              <p>Mobile / WhatsApp: +44 (0) 7534 629 583</p>
+              <p><a href="tel:01582967987" className="hover:text-blue-600 transition-colors">Phone (24/7): 01582 967 987</a></p>
+              <p><a href="tel:+447534629583" className="hover:text-blue-600 transition-colors">Mobile / WhatsApp: +44 (0) 7534 629 583</a></p>
             </>}
           />
           <ContactInfo
             icon={<Mail className="w-8 h-8" />}
             title="Email Us"
             text={<>
-              <p>General: info@forklifthiresolutions.org</p>
-              <p>Enquiries: enquiries@forklifthiresolutions.org</p>
-              <p>Sales: sales@forklifthiresolutions.org</p>
-              <p>Hire: hire@forklifthiresolutions.org</p>
-              <p>Admin: admin@forklifthiresolutions.org</p>
-              <p>Accounts: accounts@forklifthiresolutions.org</p>
-              <p>Services: services@forklifthiresolutions.org</p>
-              <p>Director: karim@forklifthiresolutions.org</p>
+              <p><a href="mailto:info@forklifthiresolutions.org" className="hover:text-blue-600 transition-colors">General: info@forklifthiresolutions.org</a></p>
             </>}
           />
           <ContactInfo
