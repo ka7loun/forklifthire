@@ -33,9 +33,9 @@ const Contact: FC = () => {
 
   // EmailJS configuration
   const RECIPIENT_EMAIL = 'info@forklifthiresolutions.org';
-  const SERVICE_ID = 'service_xdkm0kf'; // User's actual service ID
-  const TEMPLATE_ID = 'template_8l4kkd4'; // User's actual template ID
-  const PUBLIC_KEY = '3YvxzKDTMOgF6B4i9'; // User's actual public key
+  const SERVICE_ID = 'service_qqxvxzj'; // User's actual service ID
+  const TEMPLATE_ID = 'template_qqxvxzj'; // User's actual template ID
+  const PUBLIC_KEY = 'E925Y6Lr9_g2KI'; // User's actual public key
 
   // Initialize EmailJS
   useEffect(() => {
