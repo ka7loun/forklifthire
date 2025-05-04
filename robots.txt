@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://ka7loun.github.io/forklifthire/sitemap.xml
+Sitemap: https://forklifthiresolutions.org/sitemap.xml
